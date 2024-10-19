@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MonitorarHabitoa.MainPage">
+
+    <StackLayout Padding="10">
+        <!-- Botão para adicionar um novo hábito -->
+        <Button Text="Adicionar Hábito" Clicked="AoAdicionarHabito" />
+        
+        <!-- Lista de hábitos -->
+        <ListView x:Name="ListaDeHabitos">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Titulo}" FontSize="20" />
+                            <Label Text="{Binding ProgressoFormatado}" FontSize="20" Margin="10,0" />
+                            <Button Text="Concluir" Clicked="AoConcluirHabito" />
+                            <Button Text="Remover" Clicked="AoRemoverHabito" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
